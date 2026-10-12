@@ -1,0 +1,17 @@
+{
+  "name": "ai-farm-guardian",
+  "version": "1.0.0",
+  "description": "AI Farm Guardian - Smart Crop Health Monitoring & Dynamic Intervention Prioritization",
+  "scripts": {
+    "dev": "concurrently \"npm run backend\" \"npm run frontend\" --names \"BACKEND,FRONTEND\" --prefix-colors \"green,cyan\"",
+    "backend": "python3.12 -m uvicorn backend.main:app --host 0.0.0.0 --port 8000 --reload",
+    "frontend": "npm --prefix frontend run dev",
+    "install:all": "npm install && npm --prefix frontend install",
+    "install:backend": "python3.12 -m pip install -r backend/requirements.txt",
+    "build": "npm --prefix frontend run build"
+  },
+  "dependencies": {
+    "concurrently": "^8.2.0"
+  },
+  "devDependencies": {}
+}
